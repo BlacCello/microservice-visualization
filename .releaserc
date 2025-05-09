@@ -6,13 +6,15 @@
     ],
     "plugins": [
         "@semantic-release/commit-analyzer",
-        "@semantic-release/release-notes-generator",
         [
-            "@semantic-release/github",
+            "@semantic-release/release-notes-generator",
             {
-                "successComment": "The Docker image for this release of tadis-ui is available at `ghcr.io/${{github.repository_owner}}/tadis-ui:${{nextRelease.version}}`."
+                "writerOpts": {
+                    "footer": "The Docker image for this release is available at `ghcr.io/${{github.repository_owner}}/tadis-ui:${{nextRelease.version}}`."
+                }
             }
         ],
+        "@semantic-release/github",
         "@semantic-release/git"
     ]
 }
