@@ -1,7 +1,7 @@
 import { describe, test } from 'mocha'
 import { expect } from 'chai'
-import { Node } from '~/domain/model'
-import { SecondLevelEdgesRemover } from '~/domain/SecondLevelEdgesRemover'
+import { Node } from './model'
+import { SecondLevelEdgesRemover } from './SecondLevelEdgesRemover'
 
 describe('SecondLevelEdgesRemover', function() {
 

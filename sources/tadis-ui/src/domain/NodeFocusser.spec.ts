@@ -1,8 +1,8 @@
 import { describe, test } from 'mocha'
 import { expect } from 'chai'
-import { Node } from '~/domain/model'
-import { GraphService } from '~/domain/service'
-import { NodeFocusser } from '~/domain/NodeFocusser'
+import { Node } from './model'
+import { GraphService } from './service'
+import { NodeFocusser } from './NodeFocusser'
 
 describe('NodeFocusser', function() {
 

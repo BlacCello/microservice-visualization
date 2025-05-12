@@ -1,7 +1,7 @@
 import { describe, test } from 'mocha'
 import { expect } from 'chai'
-import { Node } from '~/domain/model'
-import { NodeCollapser } from '~/domain/NodeCollapser'
+import { Node } from './model'
+import { NodeCollapser } from './NodeCollapser'
 
 describe('node collapser', function() {
 
