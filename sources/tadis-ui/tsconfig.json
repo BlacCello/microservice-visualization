@@ -13,6 +13,11 @@
             "src"
         ],
         "baseUrl": ".",
+        "paths": {
+            "~/*": [
+                "src/*"
+            ]
+        },
         "lib": [
             "es2015",
             "es2016",
@@ -28,7 +33,6 @@
         "src/**/*.ts"
     ],
     "exclude": [
-        "src/**/*.spec.ts",
         "node_modules",
         "**/*.js",
         "dist"
