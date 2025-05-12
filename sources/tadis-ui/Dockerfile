@@ -1,21 +1,20 @@
 # stage: build
-FROM node:18-alpine as build
+FROM node:24.0.1-alpine as build
 WORKDIR /viewer
 
 COPY *.json ./
 RUN npm ci
 
-COPY *.js .
+COPY *.ts .
 COPY src ./src/
-COPY test ./test/
 
 RUN npm run test && npm run build
 
 # stage: install prod packages & run
-FROM node:18-alpine
+FROM node:24.0.1-alpine
 
-RUN mkdir -p /viewer/build
-COPY --from=build /viewer/build /viewer/build/
+RUN mkdir -p /viewer/dist
+COPY --from=build /viewer/dist /viewer/dist/
 COPY --from=build /viewer/*.json /viewer/
 COPY --from=build /viewer/*.js /viewer/
 RUN mkdir -p /viewer/src/html
