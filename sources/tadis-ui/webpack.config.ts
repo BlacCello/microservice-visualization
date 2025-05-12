@@ -1,11 +1,16 @@
-const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import path from 'path';
+import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export default {
   entry: './src/viewer.ts',
   output: {
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    chunkFilename: '[name].chunk.js',
-    path: [__dirname, 'build', 'bundle'].join('/')
   },
   devtool: 'source-map',
   module: {
@@ -25,7 +30,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ]
+    extensions: ['.tsx', '.ts', '.js']
   },
   plugins: [
     new ProgressBarPlugin()
@@ -36,4 +41,4 @@ module.exports = {
       automaticNameDelimiter: '-'
     }
   }
-}
+};

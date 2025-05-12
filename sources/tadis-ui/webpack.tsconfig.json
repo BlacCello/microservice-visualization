@@ -4,12 +4,13 @@
         "target": "es2015",
         "moduleResolution": "node",
         "downlevelIteration": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
         "allowJs": true,
         "sourceMap": true,
         "outDir": "build",
         "rootDirs": [
-            "src",
-            "test"
+            "src"
         ],
         "baseUrl": ".",
         "paths": {
@@ -25,6 +26,7 @@
     },
     "exclude": [
         "node_modules",
+        "**/*.spec.ts",
         "**/*.js"
     ]
 }

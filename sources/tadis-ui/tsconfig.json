@@ -1,22 +1,18 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "esnext",
         "target": "es2015",
         "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
         "downlevelIteration": true,
         "allowJs": true,
         "sourceMap": true,
-        "outDir": "build",
+        "outDir": "dist",
         "rootDirs": [
-            "src",
-            "test"
+            "src"
         ],
         "baseUrl": ".",
-        "paths": {
-            "~/*": [
-                "src/*"
-            ]
-        },
         "lib": [
             "es2015",
             "es2016",
@@ -28,9 +24,13 @@
             "mocha"
         ]
     },
+    "include": [
+        "src/**/*.ts"
+    ],
     "exclude": [
+        "src/**/*.spec.ts",
         "node_modules",
         "**/*.js",
-        "build"
+        "dist"
     ]
 }
